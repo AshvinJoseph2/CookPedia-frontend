@@ -22,15 +22,19 @@
             <p>Our Most popular recipes of the week</p>
             <a routerLink="/recipes">View All</a>
         </div>
-        <div class="row my-5">
-            <div class="col-lg-4">
-                <div class="p-3">
-                    <img src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png" class="card-img-top img-fluid" alt="recipe">
-                    <div class="card-body">
-                        <h5 class="card-title">name</h5>
+        <div class="row my-3">
+            <!-- duplicate recipe -->
+             @for (recipe of allRecipes(); track $index) {
+                <div class="col-lg-4">
+                    <div class="p-3">
+                        <img [src]="recipe.image" class="card-img-top img-fluid" alt="recipe">
+                        <div class="card-body">
+                            <h5 class="card-title">{{recipe.name}}</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
+             }
+            
         </div>
      </div>
     <!-- banner -->
