@@ -31,7 +31,7 @@
                          <div class="text-danger fw-bolder mb-3">*Invalid Email</div>
                     }
                     <div class="mb-3">
-                        <input name="password" formControlName="password" type="text" placeholder="Password" class="form-control">
+                        <input name="password" formControlName="password" type="password" placeholder="Password" class="form-control">
                     </div>
                     @if (registerForm.get('password')?.errors && registerForm.get('password')?.touched){
                          <div class="text-danger fw-bolder mb-3">*Invalid Password</div>
