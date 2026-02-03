@@ -62,4 +62,24 @@ export class ApiService {
     return this.http.delete(`${this.server_url}/save-recipes/${id}`,this.appendToken())
   }
 
+  //  http://localhost:3000/feedback - post by contact when submit btn clicked
+  addFeedbackAPI(reqBody:any){
+    return this.http.post(`${this.server_url}/feedback`,reqBody)
+  }
+
+  //  approve-feeedbacks - get request by home component when page loads
+  getApproveFeedbackAPI(){
+    return this.http.get(`${this.server_url}/approve-feedbacks`)
+  }
+
+  //  http://localhost:3000/users/6971e84ebb6f80093f438d64  - put request by profile component when picture upload
+  updateUserProfileAPI(id:string,reqBody:any){
+    return this.http.put(`${this.server_url}/users/${id}`,reqBody,this.appendToken())
+  }
+
+  // http://localhost:3000/user-downloads  - get request by profile when page loads
+  getUserDownloadAPI(){
+    return this.http.get(`${this.server_url}/user-downloads`,this.appendToken())
+  }
+
 }

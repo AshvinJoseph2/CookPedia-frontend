@@ -65,10 +65,12 @@
         <h1>Client Testimonials</h1>
         <div class="scroll-text my-5 d-flex">
             <!-- feedbacks to be duplicated -->
-             <div class="border p-3 shadow me-2 w-25 text-wrap">
-                <h5>Client</h5>
-                <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aspernatur recusandae repudiandae rem excepturi laborum tenetur. Hic quia suscipit iusto inventore similique at, minima fuga. Quos at dicta odio ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illo accusamus dicta laudantium commodi cumque modi eum in? At, odit repudiandae nobis quasi nulla laudantium reiciendis quis asperiores esse exercitationem?</p>
-             </div>
+             @for (item of allFeddbacks(); track $index) {
+                <div class="border p-3 shadow me-2 w-25 text-wrap">
+                <h5>{{item.name}}</h5>
+                <p style="text-align: justify;">{{item.message}}</p>
+                </div>
+             }
         </div>
      </div>
 

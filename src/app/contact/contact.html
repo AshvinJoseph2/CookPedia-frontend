@@ -1,1 +1,87 @@
-<p>contact works!</p>
+<app-header/>
+<div class="container">
+    <div style="height: 350px;" class="row bg-success text-light align-items-center">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 text-center">
+             <h1>Contact Us!</h1>
+            <p>Cookpedia is a modern recipe and cooking platform designed to make everyday cooking simple, enjoyable, and accessible for everyone. From beginner-friendly dishes to global flavors, Cookpedia helps home cooks learn, experiment, and cook with confidence</p>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row my-5 align-items-center">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+         <h3>Get In Touch</h3>
+         <p style="text-align: justify;">At Cookpedia, we believe great cooking starts with the right guidance and a love for food. Our platform brings together trusted recipes, helpful tips, and clear instructions to support you at every step in the kitchen. Whether you’re cooking a quick weekday meal or trying something new, Cookpedia is here to inspire creativity and make every dish a success.</p>
+         <div>
+            <div class="d-flex">
+                <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-solid fa-location"></i> </div>
+                <div class="ms-3">
+                    <h4>Address</h4>
+                    <p>Cookpedia,Kerala-9779898</p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-solid fa-envelope"></i> </div>
+                <div class="ms-3">
+                    <h4>Mail</h4>
+                    <p>enquiry@cookpedia.com</p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-solid fa-phone"></i> </div>
+                <div class="ms-3">
+                    <h4>Phone Number</h4>
+                    <p>743943639834</p>
+                </div>
+            </div>
+            <hr>
+            <h3>Follow Us</h3>
+            <div class="d-flex mt-3">
+                 <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-brands fa-instagram fs-5"></i> </div>
+                <div class="ms-3">
+                     <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter fs-5"></i></div>
+                </div>
+                <div class="ms-3">
+                     <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-solid fa-envelope fs-5"></i> </div>
+                </div>
+                <div class="ms-3">
+                     <div style="width: 40px;height: 40px; border-radius: 50%;" class="bg-success text-light d-flex justify-content-center align-items-center"><i class="fa-solid fa-phone fs-5"></i> </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <form #feedbackForm="ngForm" (ngSubmit)="submitFeedback()" class="border shadow p-5">
+                <h3>Client Testimonials</h3>
+                <div class="mb-3 mt-5">
+                    <input #username="ngModel" name="username" [(ngModel)]="name" type="text" placeholder="Name" class="form-control " required pattern="[a-zA-Z ]*">
+                </div>
+                @if (username.invalid && username.touched) {
+                    <div class="mb-3 text-danger">*Invalid Username</div>
+                }
+                <div class="mb-3">
+                    <input #usermail="ngModel" name="mail" [(ngModel)]="email" type="email" placeholder="Email" class="form-control" required email>
+                </div>
+                @if (usermail.invalid && usermail.touched) {
+                    <div class="mb-3 text-danger">*Invalid email</div>
+                }
+                <div class="mb-3">
+                    <textarea #userMessage="ngModel" name="message" [(ngModel)]="message" type="text" placeholder="Message" class="form-control" required ></textarea>
+                </div>
+                @if (userMessage.invalid && userMessage.touched) {
+                    <div class="mb-3 text-danger">*Invalid Message</div>
+                }
+                <p class="text-secondary">By submitting your agreeing the terms and conditions of our website.we may use your details in our site.</p>
+                <div class="mb-3 float-end">
+                    <button type="submit" [disabled]="feedbackForm.invalid" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="my-5 ">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62865.55832720463!2d76.30948095113635!3d10.008813464705796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c8e94a07a07%3A0x49921cdfae82660!2sKakkanad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1769765946112!5m2!1sen!2sin" width="1300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<app-footer/>

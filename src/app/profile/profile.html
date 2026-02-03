@@ -1,1 +1,35 @@
-<p>profile works!</p>
+<app-header/>
+<div class="container">
+    <div style="height: 200px;" class="row bg-success"></div>
+    <div style="width: 220px; height: 220px;border-radius: 50%;margin-top: -110px;" class="p-2 border">
+        <img width="200px" height="200px" style="border-radius: 50%;" [src]="imgURL()" alt="picture">
+    </div>
+    <label for="upload" class="mb-3">
+        <span style="margin-top: -50px; margin-left: 110px;" class="btn bg-success text-light"><i class="fa-solid fa-upload"></i></span>
+        <input (change)="uploadPicture($event)" type="file" id="upload" accept="image/*" hidden>
+    </label>
+    <div class="mb-3 d-flex align-items-center">
+        <h1>{{username}}</h1>
+        <i class="fa-solid fa-check-circle text-primary fa-2x ms-1"></i>
+    </div>
+    <p style="text-align: justify;">Food enthusiast sharing tried-and-true recipes, simple kitchen tips, and comforting flavors. Passionate about turning everyday ingredients into easy, delicious meals worth repeating.Recipe collector. Flavor chaser. Turning everyday ingredients into something special.</p>
+    <p>🍳 Home cook with a love for simple, flavorful recipes. Always experimenting, always tasting.</p>
+    <p>✨From quick weekday meals to weekend indulgences — cooking, testing, and sharing what works.</p>
+    <p>🍽️Cooking from the heart, one recipe at a time. Comfort food, family favorites, and easy wins.</p>
+
+    <h3 class="my-5">Recipe Download List</h3>
+        <div class="row">
+            @for (recipe of downloadList(); track $index) {
+                <div class="col-lg-2">
+                        <div routerLink="/recipe/{{recipe.recipeId}}/view" class="p-3">
+                            <img [src]="recipe.image" class="card-img-top img-fluid" alt="recipe">
+                            <div class="card-body">
+                                <p class="card-title">{{recipe.name}}</p>
+                            </div>
+                        </div>
+                </div>
+            }
+        </div>
+
+</div>
+<app-footer/>
